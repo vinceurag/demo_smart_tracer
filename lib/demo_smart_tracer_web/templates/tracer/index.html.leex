@@ -1,0 +1,12 @@
+<div>
+  <form action="#" phx-submit="trace">
+    <%= text_input :trace, :fun_ref, placeholder: "&Test.hello/1" %>
+    <%= text_input :trace, :trace_limit, [placeholder: "1", value: "1"] %>
+    <%= submit "Start Tracing", phx_disable_with: "Tracing..." %>
+  </form>
+  <ul>
+    <%= for trace <- @traces do %>
+      <li><%= trace %></li>
+    <% end %>
+  </ul>
+</div>
